@@ -34,7 +34,7 @@ jobs:
         run: adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
 
       - name: Run Tests
-        run: ./gradle connectedCheck
+        run: ./gradlew connectedCheck
 
       - name: Stop Emulator
         run: adb emu kill
