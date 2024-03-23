@@ -24,11 +24,11 @@ jobs:
       - name: Set up Android Emulator
         uses: actions/setup-android@v2
         with:
-          sdk-version: '34' # Specify the Android SDK version you need
+          sdk-version: '30' # Specify the Android SDK version you need
           emulator-type: 'pixel' # Specify the emulator type, e.g., 'pixel' or 'android'
 
       - name: Start Emulator
-        run: emulator -avd emulator-name -no-audio -no-window
+        run: emulator -avd pixel -no-audio -no-window
 
       - name: Wait for Emulator to Start
         run: adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
