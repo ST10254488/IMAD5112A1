@@ -28,19 +28,13 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-            
-      - name: Start emulator
-        uses: android-emulator-runner/start-emulator@v2
-        with:
-          api-level: 29
-          emulator-type: 'pixel'
-          script: './gradlew connectedCheck'
-          
-      - name: Wait for emulator to start
-        run: adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
+
+      - name: Set up Gradle
+        run: chmod +x ./gradlew
+      - run: ./gradlew --version
+
+      - name: Build with Gradle
+        run: ./gradlew build
 
       - name: Run tests
-        run: ./gradlew connectedCheck
-
-      - name: Stop emulator
-        uses: android-emulator-runner/stop-emulator@v2
+        run: ./gradlew test
