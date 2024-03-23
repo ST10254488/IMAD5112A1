@@ -24,7 +24,7 @@ jobs:
       - name: Set up Android Emulator
         uses: actions/setup-android@v2
         with:
-          sdk-version: '30' # Specify the Android SDK version you need
+          sdk-version: '29' # Specify the Android SDK version you need
           emulator-type: 'pixel' # Specify the emulator type, e.g., 'pixel' or 'android'
 
       - name: Start Emulator
