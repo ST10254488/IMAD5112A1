@@ -28,7 +28,7 @@ jobs:
           emulator-type: 'pixel' # Specify the emulator type, e.g., 'pixel' or 'android'
 
       - name: Start Emulator
-        run: emulator -avd pixel -no-audio -no-window
+        run: emulator -avd pixel 2 -no-audio -no-window
 
       - name: Wait for Emulator to Start
         run: adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
