@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
 
       - name: Build with Gradle
-        run: ./gradle build
+        run: ./https://github.com/ST10254488/IMAD5112A1/tree/master/gradle/wrapper build
 
       - name: Run tests
-        run: ./gradle test
+        run: ./https://github.com/ST10254488/IMAD5112A1/tree/master/gradle/wrapper test
