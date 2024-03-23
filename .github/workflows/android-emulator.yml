@@ -20,34 +20,21 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt' # Specify the distribution of Java to use
-          java-package: 'jdk'
-          architecture: 'x64'
-          check-latest: false
-          server-id: 'github'
-          server-username: ${{ github.actor }}
-          server-password: ${{ github.token }}
-          overwrite-settings: true
-          job-status: 'success'
 
-      - name: Install Android SDK
-        uses: android-emulator-runner/setup-android@v2
+      - name: Set up Android Emulator
+        uses: actions/setup-android@v2
         with:
           sdk-version: '30' # Specify the Android SDK version you need
-          emulator-version: '30' # Specify the Emulator version you need
-
-      - name: Start emulator
-        uses: android-emulator-runner/start-emulator@v2
-        with:
-          api-level: 30 # Specify the API level for the emulator
           emulator-type: 'pixel' # Specify the emulator type, e.g., 'pixel' or 'android'
-          script: './gradlew connectedCheck' # Specify the script to run after emulator is booted
 
-      - name: Wait for emulator to start
+      - name: Start Emulator
+        run: emulator -avd emulator-name -no-audio -no-window
+
+      - name: Wait for Emulator to Start
         run: adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; input keyevent 82'
 
-      - name: Run tests
+      - name: Run Tests
         run: ./gradlew connectedCheck
 
-      - name: Stop emulator
-        uses: android-emulator-runner/stop-emulator@v2
+      - name: Stop Emulator
+        run: adb emu kill
