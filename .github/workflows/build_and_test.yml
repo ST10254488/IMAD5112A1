@@ -31,13 +31,15 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Run Debug Tests
-        run: ./gradlew testDebugUnitTest --continue
+        run: ./gradlew testDebugUnitTest
+
       - name: Upload Test Reports
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
           name: test-reports
           path: '**/build/reports/tests/'
+
 
   android_test_job:
     name: Android Tests
