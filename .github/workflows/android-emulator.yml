@@ -20,6 +20,15 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'adopt' # Specify the distribution of Java to use
+          java-package: 'jdk'
+          architecture: 'x64'
+          check-latest: false
+          server-id: 'github'
+          server-username: ${{ github.actor }}
+          server-password: ${{ github.token }}
+          overwrite-settings: true
+          job-status: 'success'
 
       - name: Install Android SDK
         uses: android-emulator-runner/setup-android@v2
