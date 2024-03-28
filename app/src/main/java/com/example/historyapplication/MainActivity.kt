@@ -52,12 +52,11 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 if (intAge == null){
-                    result.text = "Decimals and And Letters are not ages. Please enter a whole number."
+                    result.text = "Decimals and Letters are not ages. Please enter a whole number."
                 }else result.text = "No famous figure of this age is in the archive. Pick between ages 20 - 100."
             }}
 
         clear.setOnClickListener(){
-            intAge.clear
             result.text = ""
         }
     }
