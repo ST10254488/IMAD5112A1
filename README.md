@@ -3,6 +3,8 @@
 ### Overview
 The History Figures App is a mobile application designed to make history more engaging and relatable by generating a famous historical figure who died at a specified age. The app aims to provide users with a fun and interactive way to learn about historical figures and their contributions to history.
 
+![Screenshot 2024-03-28 214601](https://github.com/ST10254488/IMAD5112A1/assets/164567181/967c96ce-c9ef-430e-a330-e3d68d67a4e3)
+
 ### Features
 1. **Age Input**: Users can input an age between 20 and 100 into the app.
 2. **Generate Figure**: The app generates a famous historical figure who died at the specified age.
