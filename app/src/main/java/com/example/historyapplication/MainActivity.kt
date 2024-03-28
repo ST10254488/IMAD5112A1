@@ -18,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         val result = findViewById<TextView>(R.id.tvResult)
 
         generate.setOnClickListener(){
-            val intAge = age.toString().toIntOrNull()
+            val intAge = age.toString().toIntOrNull()//This means only Integers must be enter.
 
-
+            // If the input is an integer and between 20 and 100
             if ((intAge != null) && (intAge in (20..99))){
 
                 if (intAge < 30){
@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             else{
+                //If its True that the input is not an integer
                 if (intAge == null){
                     result.text = "Decimals and Letters are not ages. Please enter a whole number."
                 }else result.text = "No famous figure of this age is in the archive. Pick between ages 20 - 100."
