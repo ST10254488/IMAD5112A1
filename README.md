@@ -23,7 +23,7 @@ The History Figures App is a mobile application designed to make history more en
 - Kotlin Programming Language: [kotlinlang.org](https://kotlinlang.org/)
 - Android Studio: [developer.android.com/studio](https://developer.android.com/studio)
 - Ishan Gaba, 2023, Feb 23, 2023, SimpliLearn: https://www.simplilearn.com/tutorials/devops-tutorial/version-control 
-- Stackflow, Kotlin, If value is null then exit, else use that value as not nullable: URL  
+- Stackflow, Kotlin, If value is null then exit, else use that value as not nullable: https://stackoverflow.com/questions/68442362/kotlin-if-value-is-null-then-exit-else-use-that-value-as-not-nullable
 
 ### Links
 - https://www.youtube.com/watch?v=s5HLB-X697Y
