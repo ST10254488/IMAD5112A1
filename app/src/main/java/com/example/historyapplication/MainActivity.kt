@@ -18,6 +18,13 @@ class MainActivity : AppCompatActivity() {
         val result = findViewById<TextView>(R.id.tvResult)
 
         generate.setOnClickListener(){
+
+//CODE ATTRIBUTION
+//I GOT THIS FROM STACKFLOW
+//https://stackoverflow.com/questions/68442362/kotlin-if-value-is-null-then-exit-else-use-that-value-as-not-nullable
+//SMBiggs
+//https://stackexchange.com/users/311307/scott-biggs
+
             val intAge = age.toString().toIntOrNull()//This means only Integers must be enter.
 
             // If the input is an integer and between 20 and 100
